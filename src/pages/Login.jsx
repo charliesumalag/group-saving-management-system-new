@@ -3,9 +3,15 @@ import React, { useState } from 'react'
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
     function togglePassword() {
-        setShowPassword((prev) => !prev);
+        setShowPassword(prev => !prev);
     }
+
+    function rememberMeToggle(e){
+        setRememberMe(e.target.checked);
+    }
+
   return (
     <div className='min-h-screen w-full flex flex-col justify-center items-center font-sans'>
         <div className='absolute top-4 left-0 w-full px-6 flex flex-col gap-4 '>
@@ -36,7 +42,7 @@ const Login = () => {
                 </div>
                 <div className='flex justify-between mt-6'>
                     <label htmlFor="remember" className='flex gap-2 items-center text-gray-700'>
-                    <input type="checkbox" id='remember' /> Remember me
+                    <input type="checkbox" id='remember' checked={rememberMe} onChange={(e) => rememberMeToggle(e)} /> Remember me
                     </label>
                     <a href="" className='text-gray-700'>Forgot password?</a>
                 </div>
