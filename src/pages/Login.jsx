@@ -1,45 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    function togglePassword() {
+        setShowPassword((prev) => !prev);
+    }
   return (
-    <>
-    <div className='w-full px-6 flex flex-col gap-4 absolute top-4'>
-        <div className='flex gap-2'>
-            <img src="wallet-solid.svg" alt=""  className='w-[16px]' />
-            <h1 className='text-xl italic'>Group Saving</h1>
+    <div className='min-h-screen w-full flex flex-col justify-center items-center font-sans'>
+        <div className='absolute top-4 left-0 w-full px-6 flex flex-col gap-4 '>
+            <div className='flex gap-2'>
+                <img src="wallet-solid.svg" alt=""  className='w-[16px]' />
+                <h1 className='text-xl italic text-[#3E38F5]'>Group Saving</h1>
+            </div>
+            <hr className=' border-gray-200' />
         </div>
-        <hr className=' border-gray-200' />
-    </div>
-    <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4 font-sans">
-      <div className="w-full max-w-md ">
-        <div className='mb-6'>
-            <p className='text-4xl'>Login</p>
-            <p className='text-base text-slate-700'>Hi, welcome back 👏 </p>
-        </div> 
-        <form className="space-y-5">
+        <div className='w-full flex flex-col max-w-md gap-6'>
             <div>
-                <label htmlFor="username" className="mb-2 block text-base font-medium text-slate-700">Username</label>
-                <input id="username" name="username" type="text" placeholder="Enter your username" className="w-full rounded-sm border border-slate-300 px-3 py-2.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+                <h2 className='text-3xl'>Login</h2>
+                <p>Hi, Welcome back</p>
             </div>
-            <div>
-                <div className="mb-2 flex items-center justify-between">
-                    <label htmlFor="password" className="block text-base font-medium text-slate-700"> Password</label>
-                    <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-700"> Forgot password?</a>
+            <form action="" className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-1'>
+                    <label htmlFor="username" className='text-base text-gray-700'>Username</label>
+                    <input type="text" id='username' className='border border-gray-400 px-2 py-2 rounded-sm text-gray-500 font-sans w-full focus:border-[#3E38F5] focus:ring-1 focus:ring-[#3E38F5] outline-none ' placeholder='Enter username'/>
                 </div>
-                <input id="password" name="password" type="password" placeholder="Enter your password" className="w-full rounded-sm border border-slate-300 px-3 py-2.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"/>
-            </div>
-
-            <div className="flex items-center gap-2">
-                <input id="remember" name="remember" type="checkbox" className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"/>
-                <label htmlFor="remember" className="text-base text-slate-600">Remember me</label>
-            </div>
-            <button type="submit" className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Sign In</button>
-        </form>
-        <p className="mt-8 text-center text-xs text-slate-400">Group Saving Management System</p>
-      </div>
+                <div className='flex flex-col gap-1'>
+                    <label htmlFor="password" className='text-base text-gray-700'>Password</label>
+                    <div className='relative'>
+                        <input type={showPassword ? "text" : "password"} id='password' className='border border-gray-400 px-2 py-2 rounded-sm text-gray-500 font-sans w-full focus:border-[#3E38F5] focus:ring-1 focus:ring-[#3E38F5] outline-none pr-10' placeholder='Enter password'/>
+                        <button type='button' onClick={togglePassword} aria-label={showPassword ? "Hide password" : "Show password"}  className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-400'>
+                            <i className={`fa-regular ${showPassword ? 'fa-eye' : 'fa-eye-slash'}`}></i>
+                        </button>
+                    </div>
+                </div>
+                <div className='flex justify-between mt-6'>
+                    <label htmlFor="remember" className='flex gap-2 items-center text-gray-700'>
+                    <input type="checkbox" id='remember' /> Remember me
+                    </label>
+                    <a href="" className='text-gray-700'>Forgot password?</a>
+                </div>
+                <button className='bg-[#3E38F5] p-2 rounded-md border-none text-white font-sans cursor-pointer tracking-widest hover:bg-[#0400ff] transition-colors duration-200 '>Login</button>
+            </form>
+        </div>
     </div>
-    </>
   )
 }
 
