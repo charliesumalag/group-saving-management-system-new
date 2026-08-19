@@ -5,7 +5,7 @@ import AdminDashboard from './pages/admin/DashboardPage';
 const App = () => {
   return (
     <>
-      <AdminDashboard />
+      <Login />
     </>
   )
 }

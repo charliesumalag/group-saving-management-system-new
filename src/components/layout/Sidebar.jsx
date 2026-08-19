@@ -2,7 +2,7 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <ul className='h-full text-lg p-8 flex flex-col gap-4 border-2 border-red-600 max-w-sm'>
+    <ul className='self-stretch text-lg p-8 flex flex-col gap-4 border-r border-gray-200  w-64'>
         <li className='flex items-center gap-1 cursor-pointer'>
             <span><i className="fa-regular fa-house"></i></span>
             <span className=''>Dashboard</span>
@@ -27,7 +27,7 @@ const Sidebar = () => {
             <span><i className="fa-regular fa-bell"></i></span>
             <span>Alerts</span>
         </li>
-        <li className='flex items-center gap-1 cursor-pointer mt-auto'>
+        <li className='flex items-center gap-1 cursor-pointer mt-24'>
             <span><i class="fa-solid fa-gear"></i></span>
             <span>Settings</span>
         </li>

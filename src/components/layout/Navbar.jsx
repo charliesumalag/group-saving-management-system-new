@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <ul className='flex h-full p-10 border-b-2 border-gray-200 items-center gap-2'>
+    <ul className='flex p-10 border-b-2 border-gray-200 items-center gap-2'>
         <li className='text-2xl'>Group Save</li>
         <li className='text-lg'>Admin</li>
         <li className='ml-auto flex items-center '>
