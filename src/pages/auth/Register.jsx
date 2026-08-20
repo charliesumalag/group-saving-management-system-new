@@ -11,6 +11,7 @@ const Register = () => {
   const [emailFocused,setEmailFocused] = useState(false);
   const [coopFocused, setCoopFocused] = useState(false);
   const [phoneNumberFocused,setPhoneNumberFocused] = useState(false)
+  const [selectedRole, setSelectedRole] = useState('admin');
   return (
     <div className='min-h-screen bg-[linear-gradient(-40deg,#090D1A,#1E293B)] w-full flex flex-col justify-center items-center font-sans'>
       <div className='w-[500px] h-[719px] rounded-[24px] bg-white p-[40px] '>
@@ -29,17 +30,17 @@ const Register = () => {
         <div className='mt-[20px]'>
           <p className='font-inter font-semibold text-[11px] tracking-[0.5] uppercase text-[#475569]'>Your Role in Cooperative</p>
           <div className='grid grid-cols-2 gap-[12px] mt-[8px]'>
-            <div className=' p-[12px] border-[2px] rounded-[12px] border-[#FF6B57]'>
+            <div onClick={() => setSelectedRole('admin')} className={`p-[12px] border-[2px] rounded-[12px] cursor-pointer ${selectedRole === 'admin' ? 'border-[#FF6B57]' : '#E2E8F0'} `}>
               <div className='flex justify-between '>
                 <h3 className='font-inter text-[13px] font-bold text-[#0F172A]'>Co-op Admin</h3>
-                <span className='bg-[#FF6B57] h-[14px] w-[14px] rounded-full'></span>
+                <span className={`h-[14px] w-[14px] rounded-full ${selectedRole === 'admin' ? 'bg-[#FF6B57]' : '#E2E8F0'}`}></span>
               </div>
               <p className='font-inter text-[11px] text-[#475569] '>Can create groups and manage savings cycles</p>
             </div>
-            <div className=' p-[12px] border-[2px] rounded-[12px] border-[#E2E8F0]'>
+            <div onClick={() => setSelectedRole('member')} className={`p-[12px] border-[2px] rounded-[12px] cursor-pointer ${selectedRole === 'member' ? 'border-[#FF6B57]' : '#E2E8F0'}`}>
               <div className='flex justify-between '>
                 <h3 className='font-inter text-[13px] font-bold text-[#0F172A]'>Group Member</h3>
-                <span className='bg-[#E2E8F0] h-[14px] w-[14px] rounded-full'></span>
+                <span className={`h-[14px] w-[14px] rounded-full ${selectedRole === 'member' ? 'bg-[#FF6B57]' : '#E2E8F0'}`}></span>
               </div>
               <p className='font-inter text-[11px] text-[#475569] '>Can join active saving circles and make deposits</p>
             </div>
