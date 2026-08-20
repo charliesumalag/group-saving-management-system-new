@@ -14,6 +14,7 @@ const Register = () => {
   const [coopFocused, setCoopFocused] = useState(false);
   const [phoneNumberFocused,setPhoneNumberFocused] = useState(false)
   const [selectedRole, setSelectedRole] = useState('admin');
+   const [rememberMe, setRememberMe] = useState(false);
   return (
     <div className='min-h-screen bg-[linear-gradient(-40deg,#090D1A,#1E293B)] w-full flex flex-col justify-center items-center font-sans'>
       <div className='w-[500px] h-[719px] rounded-[24px] bg-white p-[40px] '>
@@ -53,7 +54,7 @@ const Register = () => {
           <PasswordInput unlockPass={true} label='CONFIRM PASSWORD' placeholder='Repeat password' focused={conirmPasswordFocused} setFocused={setConfirmPasswordFocused}  />
         </div>
         <div className='mt-[20px]'>
-          <RememberMe label='I Agree to the Terms of Service and Privaty Policy'/>
+          <RememberMe rememberMe={rememberMe} setRememberMe={setRememberMe} label='I Agree to the Terms of Service and Privaty Policy'/>
         </div>
         <div className='mt-[20px]'>
           <Button label='Create Account' />

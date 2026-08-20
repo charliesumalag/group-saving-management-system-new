@@ -13,10 +13,6 @@ const Login = () => {
     const [rememberMe, setRememberMe] = useState(false);
 
 
-    function rememberMeToggle(){
-        setRememberMe((prev) => !prev)
-    }
-
     return (
         <div className='min-h-screen bg-[linear-gradient(-40deg,#090D1A,#1E293B)] w-full flex flex-col justify-center items-center font-sans'>
             <div className='w-[440px] h-[592px] rounded-[24px] bg-white p-[40px] ' >
