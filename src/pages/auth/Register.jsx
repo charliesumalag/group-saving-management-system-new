@@ -9,6 +9,8 @@ import Button from '../../components/ui/Button';
 const Register = () => {
   const [fullNameFocused, setFullNameFocused] = useState(false);
   const [emailFocused,setEmailFocused] = useState(false);
+  const [passwordFocused, setPasswordFocused] = useState(false);
+  const [conirmPasswordFocused, setConfirmPasswordFocused] = useState(false);
   const [coopFocused, setCoopFocused] = useState(false);
   const [phoneNumberFocused,setPhoneNumberFocused] = useState(false)
   const [selectedRole, setSelectedRole] = useState('admin');
@@ -47,8 +49,8 @@ const Register = () => {
           </div>
         </div>
         <div className='grid grid-cols-2 gap-[12px] mt-[20px]'>
-          <PasswordInput placeholder='Min. 8 characters' />
-          <PasswordInput unlockPass={true} label='CONFIRM PASSWORD' placeholder='Repeat password'  />
+          <PasswordInput placeholder='Min. 8 characters' focused={passwordFocused} setFocused={setPasswordFocused} />
+          <PasswordInput unlockPass={true} label='CONFIRM PASSWORD' placeholder='Repeat password' focused={conirmPasswordFocused} setFocused={setConfirmPasswordFocused}  />
         </div>
         <div className='mt-[20px]'>
           <RememberMe label='I Agree to the Terms of Service and Privaty Policy'/>
