@@ -10,12 +10,8 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [emailFocused, setEmailFocused] = useState(false);
     const [passwordFocused, setPasswordFocused] = useState(false);
-    const [showPassword, setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
 
-    function togglePassword() {
-        setShowPassword(prev => !prev);
-    }
 
     function rememberMeToggle(){
         setRememberMe((prev) => !prev)
