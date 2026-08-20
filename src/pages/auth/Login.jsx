@@ -4,6 +4,7 @@ import EmailInput from '../../components/auth/EmailInput';
 import PasswordInput from '../../components/auth/PasswordInput';
 import RememberMe from '../../components/auth/RememberMe';
 import AuthDivider from '../../components/auth/AuthDivider';
+import Button from '../../components/ui/Button';
 
 
 const Login = () => {
@@ -23,14 +24,15 @@ const Login = () => {
                 </div>
                 <form action="" className='mt-[24px] flex flex-col gap-[20px]'>
                     <EmailInput emailFocused={emailFocused} setEmailFocused={setEmailFocused}  />
-                    <PasswordInput passwordFocused={passwordFocused} setPasswordFocused={setPasswordFocused} togglePassword={togglePassword} showPassword={showPassword} setShowPassword={setShowPassword}  />
+                    <PasswordInput focused={passwordFocused} setFocused={setPasswordFocused} unlockPass={true} placeholder='enter password'  />
                     <div className='flex justify-between items-center'>
-                        <RememberMe rememberMe={rememberMe} rememberMeToggle={rememberMeToggle} />
+                        <RememberMe rememberMe={rememberMe} setRememberMe={setRememberMe} />
                         <a href="#" className='font-inter text-[13px] text-[#FF6B57] font-semibold'>Forgot password?</a>
                     </div>
-                    <button type='submit' className='h-[50px] w-full bg-[#FF6B57] rounded-[12px] text-white text-[15px] font-inter font-bold cursor-pointer'>Sign In</button>
+                     <Button label='Sign in' />
                 </form>
                 <AuthDivider />
+               
                 <button className='h-[50px] rounded-[12px] mt-[14px] border- border-[#E2E8F0] w-full font-inter font-semibold text-[15px] text-[#475569] cursor-pointer '>Create cooperative account</button>
             </div>
         </div>
