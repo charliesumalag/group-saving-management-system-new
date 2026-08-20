@@ -46,8 +46,8 @@ const Register = () => {
           </div>
         </div>
         <div className='grid grid-cols-2 gap-[12px] mt-[20px]'>
-          <PasswordInput />
-          <PasswordInput unlockPass={true}  />
+          <PasswordInput placeholder='Min. 8 characters' />
+          <PasswordInput unlockPass={true} label='CONFIRM PASSWORD' placeholder='Repeat password'  />
         </div>
         <div className='mt-[20px]'>
           <RememberMe label='I Agree to the Terms of Service and Privaty Policy'/>
