@@ -39,7 +39,7 @@ const Login = () => {
                     <button type='submit' className='h-[50px] w-full bg-[#FF6B57] rounded-[12px] text-white text-[15px] font-inter font-bold cursor-pointer'>Sign In</button>
                 </form>
                 <AuthDivider />
-                <button className='h-[50px] rounded-[12px] mt-[14px] border-1 border-[#E2E8F0] w-full font-inter font-semibold text-[15px] text-[#475569] cursor-pointer '>Create cooperative account</button>
+                <button className='h-[50px] rounded-[12px] mt-[14px] border- border-[#E2E8F0] w-full font-inter font-semibold text-[15px] text-[#475569] cursor-pointer '>Create cooperative account</button>
             </div>
         </div>
     )
