@@ -1,38 +1,17 @@
 import React from 'react'
+import AuthLogo from '../auth/AuthLogo'
+import Navbar from './Navbar'
 
 const Sidebar = () => {
   return (
-    <ul className='self-stretch text-lg p-8 flex flex-col gap-4 border-r border-gray-200  w-64'>
-        <li className='flex items-center gap-1 cursor-pointer'>
-            <span><i className="fa-regular fa-house"></i></span>
-            <span className=''>Dashboard</span>
-        </li>
-        <li className='flex items-center gap-1 cursor-pointer'>
-            <span><i className="fa-solid fa-people-group"></i></span>
-            <span>Members</span>
-        </li>
-        <li className='flex items-center gap-1 cursor-pointer'>
-            <span><i className="fa-solid fa-cent-sign"></i></span>
-            <span>Savings</span>
-        </li>
-         <li className='flex items-center gap-1 cursor-pointer'>
-            <span><i class="fa-regular fa-heart"></i></span>
-            <span>Contributions</span>
-        </li>
-        <li className='flex items-center gap-1 cursor-pointer'>
-            <span><i class="fa-solid fa-chart-simple"></i></span>
-            <span>Reports</span>
-        </li>
-        <li className='flex items-center gap-1 cursor-pointer'>
-            <span><i className="fa-regular fa-bell"></i></span>
-            <span>Alerts</span>
-        </li>
-        <li className='flex items-center gap-1 cursor-pointer mt-24'>
-            <span><i class="fa-solid fa-gear"></i></span>
-            <span>Settings</span>
-        </li>
-        
-    </ul>
+    <div className='w-full max-w-[280px] bg-[#0F172A] h-screen py-[32px] px-[16px] gap-[40px] flex flex-col'>
+        <AuthLogo />
+        <Navbar />
+        <div className='mt-auto block flex items-center gap-[12px] py-[12px] px-[16px] w-full bg-[#FFFFFF]/[5.1%] rounded-[12px]'>
+            <span className='font-inter font-semibold text-[12px] text-white/[66.67%]'>System Status</span>
+            <span className='inline-block py-[2px] px-[6px] font-inter font-bold text-black bg-[#10B981] rounded-[4px]'>ONLINE</span>
+        </div> 
+    </div>
   )
 }
 
